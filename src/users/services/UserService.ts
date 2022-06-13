@@ -36,6 +36,7 @@ export class UserService implements IUserService {
   }
 
   async update(id: number, data: IUser): Promise<boolean> {
+    if(data.password) { data.password = await this.hashPassword(data.password) }
     const result =  await this.userRepository.update(id, data);
     return !!result
   }
