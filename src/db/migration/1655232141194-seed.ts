@@ -6,9 +6,9 @@ export class seed1655232141194 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
 
-        await queryRunner.query("INSERT INTO user (username ,password, email, role_id) VALUES ('superuser', 'hardPassword', 'admin@mail.com', 1);");
+        // await queryRunner.query(`INSERT INTO user (username ,password, email, role_id) VALUES ('superuser', 'hardPassword', 'admin@mail.com', 1);`);
 
-        await queryRunner.query("INSERT INTO user (username ,password, email, role_id) VALUES ('randomUser', 'password', 'user@mail.com', 2);");
+        // await queryRunner.query(`INSERT INTO user (username ,password, email, role_id) VALUES ('randomUser', 'password', 'user@mail.com', 2);`);
 
         await queryRunner.query("INSERT INTO role (id,role_name) VALUES (1,'admin');");
 
