@@ -17,7 +17,7 @@ export class UserController {
     private readonly userService: IUserService,
   ) {}
 
-  // @Roles('admin')
+  @Roles('admin')
   @Get('user/all')
   async findAll(@Request() req): Promise<IUser[]> {
     return await this.userService.findAll();

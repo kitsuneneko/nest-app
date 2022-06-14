@@ -1,4 +1,4 @@
-###
+### users CRUD operations (admin features)
 GET http://localhost:3000/user/all
 Authorization: Bearer token
 
@@ -19,10 +19,10 @@ Authorization: Bearer token
 content-type: application/json
 
 {
-    "username": "user1",
+    "username": "newuser",
     "password": "password",
     "email": "email@mail.com",
-    "roleId": 1
+    "roleId": 2
 }
 
 ###
@@ -31,13 +31,13 @@ Authorization: Bearer token
 content-type: application/json
 
 {
-    "username": "simple1",
-    "password": "password3"
+    "username": "changeduser",
+    "password": "chpass"
 }
 
 
 
-###
+### Authentication
 POST http://localhost:3000/auth/login HTTP/1.1
 content-type: application/json
 
@@ -51,13 +51,25 @@ POST http://localhost:3000/auth/registration HTTP/1.1
 content-type: application/json
 
 {
-    "username": "admin",
+    "username": "superuser",
     "password": "hardPassword",
     "email": "email@mail.com",
     "roleId": 1
 }
 
+
 ###
+POST http://localhost:3000/auth/registration HTTP/1.1
+content-type: application/json
+
+{
+    "username": "just_user",
+    "password": "password",
+    "email": "email@mail.com",
+    "roleId": 2
+}
+
+### (user features)
 GET http://localhost:3000/current/profile
 Authorization: Bearer token
 
@@ -72,6 +84,6 @@ Authorization: Bearer token
 content-type: application/json
 
 {
-    "username": "simple",
-    "password": "password3"
+    "username": "changeduser",
+    "password": "changedpassword"
 }
