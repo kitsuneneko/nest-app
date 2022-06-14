@@ -1,21 +1,21 @@
 ###
 GET http://localhost:3000/user/all
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNpbXBsZTEiLCJzdWIiOjIzLCJpYXQiOjE2NTUxODQ0NzksImV4cCI6MTY1NTE4NDUzOX0.Vj4dyVpLeKdVVCSNwYKUF8Ymk7winivVcqGlS3-dl3Q
+Authorization: Bearer token
 
 
 ###
 GET http://localhost:3000/user/23
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjp7InVzZXJJZCI6MzgsInJvbGVOYW1lIjoiYWRtaW4ifSwiaWF0IjoxNjU1MjIzNTAxLCJleHAiOjE2NTUyMjM1NjF9.LtYzHLUkS_Tzgv6zfahIiFNdqju5x5ieXGwa6J13N6Y
+Authorization: Bearer token
 
 
 ### 
 DELETE http://localhost:3000/user/24
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjp7InVzZXJJZCI6MzgsInJvbGVOYW1lIjoiYWRtaW4ifSwiaWF0IjoxNjU1MjIzNTAxLCJleHAiOjE2NTUyMjM1NjF9.LtYzHLUkS_Tzgv6zfahIiFNdqju5x5ieXGwa6J13N6Y
+Authorization: Bearer token
 
 
 ###
 POST http://localhost:3000/user HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNpbXBsZTEiLCJzdWIiOjIzLCJpYXQiOjE2NTUxODQ0NzksImV4cCI6MTY1NTE4NDUzOX0.Vj4dyVpLeKdVVCSNwYKUF8Ymk7winivVcqGlS3-dl3Q
+Authorization: Bearer token
 content-type: application/json
 
 {
@@ -27,7 +27,7 @@ content-type: application/json
 
 ###
 PATCH http://localhost:3000/user/23 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjp7InVzZXJJZCI6MzgsInJvbGVOYW1lIjoiYWRtaW4ifSwiaWF0IjoxNjU1MjIzNTAxLCJleHAiOjE2NTUyMjM1NjF9.LtYzHLUkS_Tzgv6zfahIiFNdqju5x5ieXGwa6J13N6Y
+Authorization: Bearer token
 content-type: application/json
 
 {
@@ -59,16 +59,16 @@ content-type: application/json
 
 ###
 GET http://localhost:3000/current/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjp7InVzZXJJZCI6MzksInJvbGVOYW1lIjoiYWRtaW4ifSwiaWF0IjoxNjU1MjI0NTUzLCJleHAiOjE2NTUyMjQ2MTN9.FhsZzYVvxA5vK-Vcy99t2ynGnLrl1QqxJSFHKC5VWzU
+Authorization: Bearer token
 
 ### 
 DELETE http://localhost:3000/current/delete
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjp7InVzZXJJZCI6MzksInJvbGVOYW1lIjoiYWRtaW4ifSwiaWF0IjoxNjU1MjI0NTUzLCJleHAiOjE2NTUyMjQ2MTN9.FhsZzYVvxA5vK-Vcy99t2ynGnLrl1QqxJSFHKC5VWzU
+Authorization: Bearer token
 
 
 ###
 PATCH http://localhost:3000/current/update HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjp7InVzZXJJZCI6MzksInJvbGVOYW1lIjoiYWRtaW4ifSwiaWF0IjoxNjU1MjI0NTUzLCJleHAiOjE2NTUyMjQ2MTN9.FhsZzYVvxA5vK-Vcy99t2ynGnLrl1QqxJSFHKC5VWzU
+Authorization: Bearer token
 content-type: application/json
 
 {

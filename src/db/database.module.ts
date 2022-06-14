@@ -1,14 +1,8 @@
 
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Role } from 'src/roles/entities/Role';
 import { User } from 'src/users/entities/User';
-// import { AppDataSource } from './data-source';
-
-// @Module({
-//   providers: [...AppDataSource],
-//   exports: [...AppDataSource],
-// })
-// export class DatabaseModule {}
 
 @Module({
   imports: [
@@ -19,8 +13,11 @@ import { User } from 'src/users/entities/User';
       username: "root",
       password: null,
       database: "userdb",
-      entities: [User],
+      entities: [User, Role],
       synchronize: true,
+      migrations: ['dist/db/migration/*.js'],
+      migrationsRun: true,
+      
     }),
   ],
 })

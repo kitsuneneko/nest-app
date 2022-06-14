@@ -8,6 +8,6 @@ export class Role implements IRole {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column()
+    @Column({name: 'role_name'})
     roleName: string
 }
