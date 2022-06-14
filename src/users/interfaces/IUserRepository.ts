@@ -10,7 +10,7 @@ export interface IUserRepository {
 
   findById(id: number): Promise<IUser>
 
-  update(id: number, data: IUser): Promise<boolean>
+  update(id: number, data: any): Promise<boolean>
 
   remove(id: number): Promise<boolean>
 

@@ -28,7 +28,7 @@ export class UserRepository implements IUserRepository {
     return await this.userRepository.findOne({where: {id}});
   }
 
-  async update(id: number, data: IUser): Promise<boolean> {
+  async update(id: number, data: User): Promise<boolean> {
     const result =  await this.userRepository.update(id, data);
     return !!result.affected;
   }
@@ -39,6 +39,12 @@ export class UserRepository implements IUserRepository {
   }
 
   async findOneByName(username: string): Promise<User> {
-    return await this.userRepository.findOne({ where: { username } });
+    // return await this.userRepository.findOne({ where: { username } });
+    return await this.userRepository.findOne({
+      where: { username },
+      relations : {
+        role: true
+      }
+    })
   }
 }

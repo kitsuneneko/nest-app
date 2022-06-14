@@ -5,6 +5,7 @@ import { JwtService } from '@nestjs/jwt';
 import { EncodingHelper } from 'src/shared/encoding.helper';
 import { IAuthService } from '../interfaces/auth.service.interface';
 import { IUser } from 'src/users/interfaces/IUser';
+import { User } from 'src/users/entities/User';
 
 @Injectable()
 export class AuthService implements IAuthService {
@@ -30,15 +31,15 @@ export class AuthService implements IAuthService {
     return null;
   }
 
-  async login(user: any): Promise<any> {
-    const payload = { username: user.username, sub: user.userId };
+  async login(user: User): Promise<any> {
+    const payload = { username: user.username, sub: { userId: user.id, roleName: user.role.roleName} };
     return await {
       access_token: this.jwtService.sign(payload),
     };
   }
 
-  async registration(data: IUser): Promise<IUser> {
-    data.roleId = 2;
+  async registration(data: any): Promise<IUser> {
+    if(!data.roleId) { data.roleId = 2; }
     return await this.userService.create(data);
   };
 }

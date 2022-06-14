@@ -1,8 +1,8 @@
-import { IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString, MaxLength } from "class-validator";
+import { IsEmail, IsNotEmpty, IsNumber, IsString, MaxLength } from "class-validator";
 import { IUser } from "../interfaces/IUser";
-// export class CreateUserDto {}
 
-export class CreateUserDto implements IUser {
+export class CreateUserDto implements IUser{
+
   @IsString()
   @IsNotEmpty()
   @MaxLength(256, { message: 'Username is too long'})
@@ -10,7 +10,7 @@ export class CreateUserDto implements IUser {
 
   @IsString()
   @IsNotEmpty()
-  @MaxLength(256, { message: 'Username is too long'})
+  @MaxLength(25, { message: 'Password is too long'})
   password: string;
 
   @IsEmail()
@@ -18,6 +18,5 @@ export class CreateUserDto implements IUser {
   email: string;
 
   @IsNumber()
-  @IsOptional()
   roleId: number;
 }

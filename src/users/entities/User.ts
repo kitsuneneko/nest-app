@@ -21,7 +21,7 @@ export class User implements IUser {
     @Column({ name: 'role_id' })
     roleId: number
 
-    @ManyToOne(() => Role)
+    @ManyToOne(() => Role, (entity: Role) => entity.id)
     @JoinColumn({ name: 'role_id', referencedColumnName: 'id' })
     role?: IRole
 
