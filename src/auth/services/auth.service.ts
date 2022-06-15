@@ -1,16 +1,18 @@
 
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { UserService } from 'src/users/services/UserService'
 import { JwtService } from '@nestjs/jwt';
 import { EncodingHelper } from 'src/shared/encoding.helper';
 import { IAuthService } from '../interfaces/auth.service.interface';
 import { IUser } from 'src/users/interfaces/IUser';
 import { User } from 'src/users/entities/User';
+import { IUserService } from 'src/users/interfaces/IUserService';
 
 @Injectable()
 export class AuthService implements IAuthService {
   constructor(
-    private userService: UserService,
+    @Inject(UserService)
+    private userService: IUserService,
     private jwtService: JwtService,
     private encodingHelper: EncodingHelper
   ) {}
